@@ -1,4 +1,4 @@
-﻿namespace bid_one_coding_test.Controllers
+namespace bid_one_coding_test.Controllers
 
 open System
 open System.Collections.Generic
@@ -15,7 +15,10 @@ type HomeController (logger : ILogger<HomeController>) =
     inherit Controller()
 
     member this.Index () =
-        this.View()
+        seq {
+            yield Person(FirstName = "", LastName = "")
+        }
+        |> this.View
 
     member this.Privacy () =
         this.View()
