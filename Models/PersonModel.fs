@@ -4,6 +4,6 @@ open System
 open System.ComponentModel.DataAnnotations
 
 type Person () =
-    [<Key>] member val Id = Guid.NewGuid() with get, set
-    [<Required>] member val FirstName = "" with get, set
-    [<Required>] member val LastName = "" with get, set
+    [<Required(AllowEmptyStrings=false)>] member val Id = Guid.NewGuid().ToString() with get, set
+    [<Required(AllowEmptyStrings=false)>] member val FirstName = "" with get, set
+    [<Required(AllowEmptyStrings=false)>] member val LastName = "" with get, set

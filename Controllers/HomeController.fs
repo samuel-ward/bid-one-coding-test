@@ -1,10 +1,11 @@
-namespace bid_one_coding_test.Controllers
+﻿namespace bid_one_coding_test.Controllers
 
 open System
 open System.Collections.Generic
 open System.Linq
 open System.Threading.Tasks
 open System.Diagnostics
+open JsonFlatFileDataStore
 
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Logging
@@ -14,14 +15,25 @@ open bid_one_coding_test.Models
 type HomeController (logger : ILogger<HomeController>) =
     inherit Controller()
 
+    let people () =
+        // Change to JSON file
+        (new DataStore("data.json")).GetCollection<Person>()
+
     member this.Index () =
-        seq {
-            yield Person(FirstName = "", LastName = "")
-        }
+        (people ()).AsQueryable()
         |> this.View
 
-    member this.Privacy () =
-        this.View()
+    member this.Create () =
+        this.View ()
+
+    [<HttpPost>]
+    member this.Create (person: Person): ActionResult =
+        if base.ModelState.IsValid then
+            person |> (people ()).InsertOneAsync |> Async.AwaitTask |> Async.RunSynchronously
+            this.RedirectToAction("Index")
+        else
+        person
+        |> this.View :> ActionResult
 
     [<ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)>]
     member this.Error () =
