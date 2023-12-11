@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/samward/git/github.com/samuel-ward/bid-one-coding-test/bid-one-coding-test.fsproj": {}
+  },
+  "projects": {
+    "/home/samward/git/github.com/samuel-ward/bid-one-coding-test/bid-one-coding-test.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/samward/git/github.com/samuel-ward/bid-one-coding-test/bid-one-coding-test.fsproj",
+        "projectName": "bid-one-coding-test",
+        "projectPath": "/home/samward/git/github.com/samuel-ward/bid-one-coding-test/bid-one-coding-test.fsproj",
+        "packagesPath": "/home/samward/.nuget/packages/",
+        "outputPath": "/home/samward/git/github.com/samuel-ward/bid-one-coding-test/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/samward/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/nix/store/l916xm0yz41xygxbwlrqcy1wn4x1hcy5-dotnet-sdk-6.0.416/sdk/6.0.416/FSharp/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[6.0.7, )",
+              "generatePathProperty": true
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[6.0.24, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/nix/store/l916xm0yz41xygxbwlrqcy1wn4x1hcy5-dotnet-sdk-6.0.416/sdk/6.0.416/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
