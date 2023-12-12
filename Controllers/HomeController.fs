@@ -15,15 +15,18 @@ open bid_one_coding_test.Models
 type HomeController (logger : ILogger<HomeController>) =
     inherit Controller()
 
+    // TODO: Wrap C# operation in try{}
     let people () =
-        // Change to JSON file
+        // We would inject a DB through the dependency injection here, rather than use a JSON file
         (new DataStore("data.json")).GetCollection<Person>()
 
     member this.Index () =
+        // View all current people added
         (people ()).AsQueryable()
         |> this.View
 
     member this.Create () =
+        // View to create a new person record
         this.View ()
 
     [<HttpPost>]

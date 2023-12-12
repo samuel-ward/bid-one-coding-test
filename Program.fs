@@ -21,6 +21,7 @@ module Program =
 
     [<EntryPoint>]
     let main args =
+        // TODO: add db injection here
         let builder = WebApplication.CreateBuilder(args)
 
         builder
